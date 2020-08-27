@@ -1,0 +1,36 @@
+{
+  "name": "node_passport_auth",
+  "version": "1.0.0",
+  "description": "A boilerplate for an authentication system created using Node.js and Passport",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Frozen-Burrito/Node-Authentication.git"
+  },
+  "author": "Frozen Burrito",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Frozen-Burrito/Node-Authentication/issues"
+  },
+  "homepage": "https://github.com/Frozen-Burrito/Node-Authentication#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-flash": "^0.1.1",
+    "ejs": "^3.1.3",
+    "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.0",
+    "express-session": "^1.17.1",
+    "express-sessions": "^1.0.6",
+    "mongoose": "^5.9.22",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.4"
+  }
+}
