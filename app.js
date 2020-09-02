@@ -47,7 +47,7 @@ app.use(passport.session());
 
 // API Routes
 app.use('/api/v1', router);
-app.use('/api/v1/users', userRouter);
+// app.use('/api/v1/auth', userRouter);
 app.use('/api/v1/items', itemRouter);
 app.use('/api/v1/categories', categoryRouter);
 

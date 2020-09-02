@@ -3,6 +3,7 @@ const express = require('express');
 const { 
     getAllCategories,
     getCategoryById,
+    getItemsInCategory,
     addNewCategory,
     deleteCategory
 } = require('../Controllers/categoryController');
@@ -22,7 +23,7 @@ router.get('/:id', getCategoryById);
 // @desc    Get a list of all items in a category
 // @route   GET /api/v1/categories/:id/items
 // @access  Public
-router.get('/:id/items', getCategoryById);
+router.get('/:categoryId/items', getItemsInCategory);
 
 // @desc    Add a new category
 // @route   POST /api/v1/categories/add

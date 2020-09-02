@@ -2,27 +2,36 @@ const express = require('express');
 const router = express.Router();
 
 const { 
-    login_page, 
-    register_page,
-
-    register_handle,
-    login_handle,
-    logout_handle
+    loginHandle,
+    registerHandle,
+    getUserList,
+    userDetails,
+    logoutHandle
 } = require('../Controllers/authController');
 
-// Login page
-router.get('/login', login_page);
+// @desc    Login user
+// @route   POST /api/v1/auth/login
+// @access  Public
+router.post('/login', loginHandle);
 
-// Register page
-router.get('/register', register_page);
+// @desc    Register new user
+// @route   POST /api/v1/auth/register
+// @access  Public
+router.post('/register', registerHandle);
 
-// Register handle
-router.post('/register', register_handle);
+// @desc    Get list of all users 
+// @route   GET /api/v1/auth/users
+// @access  Protected
+router.get('/users', getUserList);
 
-// Login handle
-router.post('/login', login_handle);
+// @desc    Get user info
+// @route   GET /api/v1/auth/users/details/:id
+// @access  Protected
+router.get('/users/details/:id', userDetails);
 
-// Logout handle
-router.get('/logout', logout_handle);
+// @desc    Logout current user
+// @route   GET /api/v1/auth/logout
+// @access  Public
+router.get('/logout', logoutHandle);
 
 module.exports = router;

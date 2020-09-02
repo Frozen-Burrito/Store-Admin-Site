@@ -1,4 +1,5 @@
 const Category = require('../Models/Category');
+const Item = require('../Models/Item');
 
 const getAllCategories = async ( req, res ) => {
     try {
@@ -33,6 +34,26 @@ const getCategoryById = async ( req, res ) => {
         return res.status(500).json({
             success: false,
             error: 'Couldn\'t retrieve category from database',
+        });
+    }
+}
+
+const getItemsInCategory = async ( req, res ) => {
+
+    try {
+        const items = await Item.find({ category: req.params.categoryId });
+
+        return res.status(200).json({
+            success: true,
+            count: items.length,
+            data: items,
+        });
+
+    } catch (error) {
+        
+        return res.status(500).json({
+            success: false,
+            error: 'Items from category not found',
         });
     }
 }
@@ -93,6 +114,7 @@ const deleteCategory = async ( req, res ) => {
 module.exports = {
     getAllCategories,
     getCategoryById,
+    getItemsInCategory,
     addNewCategory,
     deleteCategory,
 }
